@@ -21,12 +21,7 @@ type Device = {
   };
 };
 
-const CHANNEL_ID = "C04LUAJDREW";
-
-export const getAppslist = async (
-  listName: string,
-  applications: Application[]
-) => {
+const getAppslist = async (listName: string, applications: Application[]) => {
   const list = await kv.get<string[]>(listName);
 
   if (!list) throw new Error("List not found");
